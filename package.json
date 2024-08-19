@@ -1,0 +1,14 @@
+{
+  "name": "irecovery-zoom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ngrok": "ngrok http --domain=alive-zebra-smoothly.ngrok-free.app 3000",
+    "build": "cd irecovery-zoom-backend && npm run image && cd ../irecovery-zoom-frontend && npm run image",
+    "start": "npm run ngrok && docker-compose up"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
