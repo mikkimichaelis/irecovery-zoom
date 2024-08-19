@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "pull": "docker pull mikkimichaelis/irecovery-zoom-frontend:latest; docker pull mikkimichaelis/irecovery-zoom-backend:latest",
     "install": "(cd irecovery-zoom-backend && npm install); (cd irecovery-zoom-frontend && npm install);",
     "ngrok": "ngrok http --domain=alive-zebra-smoothly.ngrok-free.app 3000",
     "build": "cd irecovery-zoom-backend && npm run image && cd ../irecovery-zoom-frontend && npm run build && npm run image",
