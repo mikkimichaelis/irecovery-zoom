@@ -1,0 +1,6 @@
+[submodule "irecovery-zoom-backend"]
+	path = irecovery-zoom-backend
+	url = https://github.com/mikkimichaelis/irecovery-zoom-backend
+[submodule "irecovery-zoom-frontend"]
+	path = irecovery-zoom-frontend
+	url = https://github.com/mikkimichaelis/irecovery-zoom-frontend
