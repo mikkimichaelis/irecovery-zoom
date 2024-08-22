@@ -1,9 +1,9 @@
 services:
   backend:
-    image: mikkimichaelis/irecovery-zoom-backend:latest
+    image: mikkimichaelis/irecovery-zoom-backend:test
     tty: true
     working_dir: /home/node/app
-    command: ["npm", "run", "server"]
+    command: ["npm", "run", "debug"]
     env_file:
       - .env
 
@@ -39,17 +39,17 @@ services:
       - ./redis:/data
 
   frontend:
-    image: mikkimichaelis/irecovery-zoom-frontend:latest
+    image: mikkimichaelis/irecovery-zoom-frontend:test
     tty: true
     working_dir: /home/node/app
-    command: ["npm", "run", "server"]
+    command: ["npm", "run", "debug"]
     ports:
-      - "127.0.0.1:3001:9090"
+      - "127.0.0.1:9090:9090"
     environment:
       - PORT=9090
       - NPM_CONFIG_CACHE=/home/node/.npm
-      - PROXY_URL=https://alive-zebra-smoothly.ngrok-free.app/api/zoomapp/proxy
-      - REACT_APP_PUBLIC_ROOT=https://alive-zebra-smoothly.ngrok-free.app/api/zoomapp
+      - PUBLIC_URL=https://alive-zebra-smoothly.ngrok-free.app
+      - REACT_APP_PUBLIC_ROOT=https://alive-zebra-smoothly.ngrok-free.app
       - REACT_APP_AUTH0_CLIENT_ID=${AUTH0_CLIENT_ID}
       - REACT_APP_AUTH0_CLIENT_SECRET=${AUTH0_CLIENT_SECRET}
       - REACT_APP_AUTH0_ISSUER_BASE_URL=${AUTH0_ISSUER_BASE_URL}
